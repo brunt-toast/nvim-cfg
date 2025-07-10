@@ -36,3 +36,6 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 -- move selected lines in visual mode by shift+dir
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Disable inlay hints
+vim.lsp.handlers["textDocument/inlayHint"] = function() end
