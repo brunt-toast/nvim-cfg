@@ -1,8 +1,16 @@
 return {
 	"iabdelkareem/csharp.nvim",
-	dependencies = { "mason.nvim", "nvim-dap" },
+	dependencies = {
+		"williamboman/mason.nvim",
+		"mfussenegger/nvim-dap",
+		"Tastyep/structlog.nvim",
+	},
 	config = function()
-		require("mason").setup()
-		require("csharp").setup()
+		require("csharp").setup({
+			lsp = {
+				omnisharp = { enable = true }, -- or false to use Roslyn
+				roslyn = { enable = false }, -- enable = true to switch
+			},
+		})
 	end,
 }
